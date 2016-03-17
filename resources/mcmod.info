@@ -1,0 +1,16 @@
+[
+{
+  "modid": "deathwatch",
+  "name": "Deathwatch",
+  "description": "Log player deaths to a file on the server for future data use",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Kayila"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
