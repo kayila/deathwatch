@@ -24,12 +24,12 @@ public class DeathWatch {
 
     public static final String MODID = "deathwatch";
     public static final String NAME = "Death Watch";
-    public static final String VERSION = "1.0";
+    public static final String VERSION = "1.1";
     
     public static FileWriter file = null;
     public static File filepath = null;
     
-    private SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd.hhmmss");
+    private SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd.HHmmss");
     
     public static FileWriter getWriter() throws IOException {
     	if (filepath == null) {
