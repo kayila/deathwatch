@@ -24,7 +24,7 @@ public class DeathWatch {
 
     public static final String MODID = "deathwatch";
     public static final String NAME = "Death Watch";
-    public static final String VERSION = "2.0";
+    public static final String VERSION = "2.1";
     
     public static FileWriter file = null;
     public static File filepath = null;
