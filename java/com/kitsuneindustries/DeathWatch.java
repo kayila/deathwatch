@@ -29,7 +29,7 @@ public class DeathWatch {
     public static FileWriter file = null;
     public static File filepath = null;
     
-    private SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd.hhmmss");
+    private SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd.HHmmss");
     
     public static FileWriter getWriter() throws IOException {
     	if (filepath == null) {
