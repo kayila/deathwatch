@@ -33,10 +33,10 @@ public class DeathWatch {
     
     public static FileWriter getWriter() throws IOException {
     	if (filepath == null) {
-    		filepath = new File(DimensionManager.getCurrentSaveRootDirectory(),"deathwatch.csv");
+	    filepath = new File(DimensionManager.getCurrentSaveRootDirectory(),"deathwatch.csv");
     	}
     	if (file == null) {
-    		file = new FileWriter(filepath,true);
+	    file = new FileWriter(filepath,true);
     	}
     	return file;
     }
@@ -48,19 +48,19 @@ public class DeathWatch {
     
     @SubscribeEvent(priority=EventPriority.NORMAL)
     public synchronized void onLivingDeathEvent(LivingDeathEvent event) throws IOException {
-    	if(!event.entity.worldObj.isRemote) {
-	    	if(event.entity instanceof EntityPlayerMP) {
-	    		EntityPlayerMP player = (EntityPlayerMP)event.entity;
-	    		Entity killer = event.source.getEntity(); // If there is a killer
-	    		FileWriter output = this.getWriter();
+    	if(!event.getEntity().worldObj.isRemote) {
+	    if(event.getEntity() instanceof EntityPlayerMP) {
+		EntityPlayerMP player = (EntityPlayerMP)event.getEntity();
+		Entity killer = event.getSource().getEntity(); // If there is a killer
+		FileWriter output = this.getWriter();
 	    		
-	    		output.write(sdf.format(Calendar.getInstance().getTime())+","+player.getDisplayNameString()+","+player.dimension
-	    				+","+player.posX+","+player.posY+","+player.posZ+","+event.source.damageType
-	    				+(killer != null ? ","+killer.getName():"")
-	    				+"\n");
-	    		output.flush();
-	    		System.out.println(sdf.format(Calendar.getInstance().getTime())+","+player.getDisplayNameString()+","+player.dimension+","+player.posX+","+player.posY+","+player.posZ+","+event.source.damageType);
-	    	}
+		output.write(sdf.format(Calendar.getInstance().getTime())+","+player.getDisplayNameString()+","+player.dimension
+			     +","+player.posX+","+player.posY+","+player.posZ+","+event.getSource().damageType
+			     +(killer != null ? ","+killer.getName():"")
+			     +"\n");
+		output.flush();
+		System.out.println(sdf.format(Calendar.getInstance().getTime())+","+player.getDisplayNameString()+","+player.dimension+","+player.posX+","+player.posY+","+player.posZ+","+event.getSource().damageType);
+	    }
     	}
     }
 }
